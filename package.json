@@ -1,0 +1,82 @@
+{
+  "name": "vscode-open-local-terminal",
+  "displayName": "Open Local Terminal",
+  "description": "Open local terminals with custom commands",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtsmfm/vscode-open-local-terminal.git"
+  },
+  "author": "Fumiaki MATSUSHIMA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtsmfm/vscode-open-local-terminal/issues"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "openLocalTerminal.openNew",
+        "title": "Open local terminal: Open New Terminal"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "openLocalTerminal.openNew"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Open Local Terminal",
+      "properties": {
+        "openLocalTerminal.commands": {
+          "type": "array",
+          "default": [],
+          "description": "List of local commands to run in terminal",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Display name for the terminal"
+              },
+              "shellPath": {
+                "type": "string",
+                "description": "A path to a custom shell executable to be used in the terminal"
+              },
+              "shellArgs": {
+                "type": "array",
+                "description": "Args for the custom shell executable.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "name",
+              "shellPath"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@types/vscode": "^1.102.0",
+    "typescript": "^5.8.3",
+    "vsce": "^2.15.0"
+  }
+}
