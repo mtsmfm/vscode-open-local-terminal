@@ -9,6 +9,7 @@
   "extensionKind": [
     "ui"
   ],
+  "publisher": "mtsmfm",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mtsmfm/vscode-open-local-terminal.git"
@@ -76,6 +77,7 @@
   "devDependencies": {
     "@types/node": "^24.1.0",
     "@types/vscode": "^1.102.0",
+    "ovsx": "^0.10.5",
     "typescript": "^5.8.3",
     "vsce": "^2.15.0"
   }
