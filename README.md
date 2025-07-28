@@ -21,3 +21,11 @@ In VS Code settings:
   ]
 }
 ```
+
+## Open VSX
+
+https://open-vsx.org/extension/mtsmfm/vscode-open-local-terminal
+
+## VSCode Marketplace
+
+https://marketplace.visualstudio.com/items?itemName=mtsmfm.vscode-open-local-terminal
